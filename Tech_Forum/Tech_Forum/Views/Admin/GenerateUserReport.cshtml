@@ -1,0 +1,129 @@
+﻿@using Tech_Forum.Models
+@model TestUser
+@{
+    ViewBag.Title = "GenerateUserReport";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    body {
+        background-image: url(../../images/blue.jpg);
+        background-repeat: no-repeat;
+        background-size: 8000px;
+    }
+    #testreport td, #testreport th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        background-color: blue;
+        color: white;
+    }
+
+    #testreport tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #testreport tr:hover {
+        background-color: #ddd;
+    }
+
+    #testreport th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: black;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6 jumbotron">
+            <br />
+            <br />
+            <br />
+            <form action="GenerateUserReport">
+                Username:<input type="text" name="inp" style=" width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;" />
+                <br />
+                <br />
+
+
+                <input type="submit" name="answer" value="Search" class="btn btn-default btn-primary">
+                <br />
+                <br />
+                <br />
+
+
+
+                @if (Model != null)
+                {
+                    if (Model.Name != null)
+                    {
+
+                        <h2><b> @Model.Name</b></h2>
+                        <br />
+                        <table border="1" style="width:300px;height:100px" class="table table-dark " id="testreport">
+
+
+
+
+
+
+                            <tr>
+                                <td><h4>Total Number of Articles published by User</h4></td>
+
+                                <td><h4>@Model.countarticle</h4></td>
+                            </tr>
+                            <tr>
+                                <td> <h4>Average Rating of The User</h4></td>
+
+
+                                <td><h4>@Model.averagerating</h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Total number of tests</h4></td>
+
+                                <td> <h4>@Model.counttest</h4></td>
+                            </tr>
+                            <tr>
+                                <td> <h4>Total number of blogs</h4></td>
+
+                                <td> <h4>@Model.countarticle</h4></td>
+                            </tr>
+
+                            <tr>
+                                <td><h4>Total number of tests passed</h4></td>
+
+                                <td><h4>@Model.pass</h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Total number of tests failed</h4></td>
+
+                                <td><h4>@Model.fail</h4></td>
+                            </tr>
+
+
+
+                        </table>
+                    }
+                    else
+                    {
+                        <h3>No results found</h3>
+                    }
+
+                }
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+</div>

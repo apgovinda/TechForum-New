@@ -1,0 +1,28 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h2>Login</h2>
+<br />
+<br />
+<form action="~/Admin/Index" method="get">
+    Username:<input type="text" name="UserID" />
+    <br />
+    <br />
+
+    Password:<input type="password" name="Password" />
+    <br />
+    <br />
+
+    <input type="submit" name="Login" value="LOGIN" />
+
+    <br />
+    <br />
+    @if (Model != null)
+    {
+        @Model.msg;
+    }
+</form>

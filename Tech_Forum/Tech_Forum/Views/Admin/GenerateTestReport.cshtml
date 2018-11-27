@@ -1,0 +1,165 @@
+﻿
+@using Tech_Forum.Models
+@model TestUser
+@{
+    ViewBag.Title = "GenerateTestReport";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<style>
+    body {
+        background-image: url(../../images/blue.jpg);
+        background-repeat: no-repeat;
+        background-size: 8000px;
+    }
+
+
+    #testreport {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #testreport td, #testreport th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            background-color: black;
+            color: white;
+        }
+
+        #testreport tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #testreport tr:hover {
+            background-color: #ddd;
+        }
+
+        #testreport th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: blue;
+            background-color: #4CAF50;
+            color: white;
+        }
+</style>
+<h2 style="color:white;text-align:center;font-style:initial">TestReport</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-6 jumbotron">
+            <br />
+
+            <br />
+            <br />
+
+
+
+            <form action="DomainSelect">
+
+
+                @if (Model != null)
+                {
+                    <select name="domlist">
+                        <option>---SELECT---</option>
+                        @for (int i = 0; i < Model.Domaincount; i++)
+                        {
+
+                            <option value="@Model.Domaindroplist[i]">@Model.Domaindroplist[i]</option>
+
+                        }
+
+
+                    </select>
+
+
+                    <input type="submit" name="show" class="btn btn-default btn-primary" value="show" />
+                    <br />
+                    <h4><b>@Model.domainsession</b></h4>
+                }
+
+                <br />
+                <br />
+                @if (Model != null)
+                {
+                    if (Model.techcount > 0)
+                    {
+
+                        <select name="technolist">
+                            <option>---SELECT---</option>
+                            @for (int i = 0; i < Model.techcount; i++)
+                            {
+
+                                <option value="@Model.Technologydroplist[i]">@Model.Technologydroplist[i]</option>
+
+                            }
+
+
+                        </select>
+
+                        <input type="submit" name="showtech" class="btn btn-default btn-primary" value="filter" />
+                        <br />
+                        <h4>@Model.techsession</h4>
+                    }
+                }
+            </form>
+            
+
+            @if (Model != null)
+            {
+                if (Model.count > 0)
+                {
+                    <br />
+                    
+                    <h2>Total number of tests : @Model.count</h2>
+                    <br />
+                   
+                   
+                    <h2>Details of the test</h2>
+                    <br />
+                    <table border="1" style="width:300px;height:100px" class="table table-dark " id="testreport">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="text-align:center">SLNO</th>
+                                <th style="text-align:center">TESTID</th>
+                                <th style="text-align:center">USERID</th>
+                                <th style="text-align:center">DOMAIN</th>
+                                <th style="text-align:center">TECHNOLOGY</th>
+                                <th style="text-align:center">SCORE</th>
+                            </tr>
+                        </thead>
+
+                        @for (int i = 0; i < Model.count; i++)
+                        {
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@Model.TestId[i]  </td>
+                                <td>@Model.UserId[i]  </td>
+                                <td>@Model.Domainlist[i]</td>
+                                <td>@Model.Technologylist[i]</td>
+                                <td>@Model.Score[i]</td>
+                            </tr>
+                        }
+
+                    </table>
+                    <br />
+
+                }
+            }
+
+
+            <br />
+            <br />
+
+
+        </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+</div>

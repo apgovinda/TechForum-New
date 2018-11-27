@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "GenerateOverallReport";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    #testreport td, #testreport th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        background-color: blue;
+        color: white;
+    }
+
+    #testreport tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #testreport tr:hover {
+        background-color: #ddd;
+    }
+
+    #testreport th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: black;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<h2>GenerateOverallReport</h2>
+
+
+<div>
+    <table border="1" style="width:300px;height:100px" class="table table-dark " id="testreport">
+
+        <tr>
+
+            <td> <h3>Total No of Hits</h3></td>
+
+            <td><h3>43005</h3></td>
+
+        </tr>
+        <tr>
+            <td> <h3>Total No of Users Online</h3></td>
+
+            <td>  <h3>430</h3></td>
+
+        </tr>
+    </table>
+
+
+</div>
+
