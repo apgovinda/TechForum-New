@@ -22,15 +22,14 @@
         <br />
         <h3><b>Search Domain</b></h3>
         <br />
-        <button type="submit" class="btn btn-default btn-primary" name="searchtest" style="width:120px" onclick="false">
-            <span class="glyphicon glyphicon-search" style="align-items:flex-end"></span>
-        </button>
+   
+      
         <br />
         <br />
         @if (Model != null)
         {
-            <select name="domain">
-                <option>---SELECT---</option>
+            <select name="domain" onchange="this.form.submit()">
+               
                 @foreach (QuestionBank q in Model)
                 {
                     if (q.domainlist != null)
@@ -45,10 +44,7 @@
             <br />
             <h3 ><b>Search Tests in the Domain</b></h3>
             <br />
-            <button type="submit" class="btn btn-default btn-primary" name="submitdomain" style="width:120px">
-                <span class="glyphicon glyphicon-search"></span>
-            </button>
-
+          
         }
 
 

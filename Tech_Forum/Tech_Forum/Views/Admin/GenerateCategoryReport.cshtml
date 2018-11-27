@@ -1,92 +1,167 @@
-﻿
+﻿@using Tech_Forum.Models
+@model TestUser
 @{
     ViewBag.Title = "GenerateCategoryReport";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<h2 style="color:white;text-align:center;font-style:initial">Category Report</h2>
 
+<style>
+    body {
+        background-image: url(../../images/blue.jpg);
+        background-repeat: no-repeat;
+        background-size: 8000px;
+    }
+
+
+    #categoryreport {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #categoryreport td, #categoryreport th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            background-color: black;
+            color: white;
+        }
+
+        #categoryreport tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #categoryreport tr:hover {
+            background-color: #ddd;
+        }
+
+        #categoryreport th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            background-color: #4CAF50;
+            color: white;
+        }
+</style>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <p style="width:10px;font-size:20px;"> DOMAIN  </p>
-            <br />
-            <br />
-            <input type="checkbox" name="vehicle1" value="Web Technology"> Cryptography,<br>
-            <input type="checkbox" name="vehicle2" value="Data Structures"> Data Structures<br>
-            <input type="checkbox" name="vehicle3" value="DBMS" checked> Provable Security of Cryptographic<br>
+
         </div>
-        <div class="col-sm-3">
-            <p style="width:10px;font-size:20px;">  TECHNOLOGY </p>
+        <div class="col-sm-6 jumbotron">
             <br />
-            <br />
-            <input type="checkbox" name="vehicle1" value=".NET"> Cryptography,<br>
-            <input type="checkbox" name="vehicle2" value="Linked List"> Data Structures<br>
-            <input type="checkbox" name="vehicle3" value="RDBMS" checked> Provable Security of Cryptographic<br>
-            <br />
-            <br />
-            <br />
-            <script type="text/javascript">
-                function showDiv(toggle) {
-                    document.getElementById(toggle).style.display = 'block';
+
+
+
+
+
+            <form action="GenerateCategoryReport">
+
+
+                @if (Model != null)
+                {
+                    <select name="domlist">
+                        <option>---SELECT---</option>
+                        @for (int i = 0; i < Model.Domaincount; i++)
+                        {
+
+                            <option value="@Model.Domaindroplist[i]">@Model.Domaindroplist[i]</option>
+
+                        }
+
+
+                    </select>
+
+
+                    <input type="submit" name="show" class="btn btn-default btn-primary" value="show" />
+                    <br />
+                    <h4><b>@Model.domainsession</b></h4>
                 }
-            </script>
 
-            <input type="button" name="answer" value="List Statistics" onclick="showDiv('toggle')">
+                <br />
+
+                @if (Model != null)
+                {
+                    if (Model.techcount > 0)
+                    {
+
+                        <select name="technolist">
+                            <option>---SELECT---</option>
+                            @for (int i = 0; i < Model.techcount; i++)
+                            {
+
+                                <option value="@Model.Technologydroplist[i]">@Model.Technologydroplist[i]</option>
+
+                            }
+
+
+                        </select>
+
+                        <input type="submit" name="showtech" class="btn btn-default btn-primary" value="filter" />
+                        <br />
+                        <h4>@Model.techsession</h4>
+                    }
+                }
+            </form>
+            <br />
+
+
+            @if (Model != null)
+            {
+                if (Model.count > 0)
+                {
+                    <br />
+
+                    <h3>Total number of Articles</h3>
+                    <br />
+
+                    <h5>@Model.count</h5>
+                    <br />
+                    <br />
+
+                    <h3>Details of the Articles</h3>
+                    <br />
+
+                    <table border="1" style="width:300px;height:100px" class="table table-dark " id="categoryreport">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="text-align:center">SLNO</th>
+                                <th style="text-align:center">Title</th>
+                                <th style="text-align:center">USERID</th>
+                                <th style="text-align:center">DOMAIN</th>
+                                <th style="text-align:center">TECHNOLOGY</th>
+
+                            </tr>
+                        </thead>
+
+                        @for (int i = 0; i < Model.count; i++)
+                        {
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td>@Model.Title[i] </td>
+                                <td>@Model.UserId[i]  </td>
+                                <td>@Model.Domainlist[i]</td>
+                                <td>@Model.Technologylist[i]</td>
+
+                            </tr>
+                        }
+
+                    </table>
+                    <br />
+
+                }
+            }
+
+
+
+
+
         </div>
         <div class="col-sm-3">
-            <p style="width:10px;font-size:20px;"> ARTICLE </p>
-            <br />
-            <br />
-            <input type="checkbox" name="vehicle1" value="Cryptography"> Cryptography,<br>
-            <input type="checkbox" name="vehicle2" value="Data Structures"> Data Structures<br>
-            <input type="checkbox" name="vehicle3" value="Provable Security of Cryptographic" checked> Provable Security of Cryptographic<br>
 
-        </div>
-        <div class="col-sm-3">
-            <p style="width:10px;font-size:20px;"> BLOG </p>
-            <br />
-            <br />
-            <input type="checkbox" name="vehicle1" value="Cryptography"> Cryptography,<br>
-            <input type="checkbox" name="vehicle2" value="Data Structures">Data Structures<br>
-            <input type="checkbox" name="vehicle3" value="Provable Security of Cryptographic" checked> Provable Security of Cryptographic<br>
         </div>
     </div>
 </div>
-<br />
-<br />
-<br />
-
-<div id="toggle" style="display:none">
-
-
-    <h3>Total No of Hits</h3>
-    <br />
-    <h3>43005</h3>
-    <br />
-    <br />
-    <br />
-    <br />
-    <h3>Rating</h3>
-    <br />
-    <h3>3</h3>
-    <br />
-    <br />
-    <br />
-    <br />
-    <h3>Total No of Topics</h3>
-    <br />
-    <h3>Highest Viewed Topic</h3>
-    <br />
-
-</div>
-
-
 

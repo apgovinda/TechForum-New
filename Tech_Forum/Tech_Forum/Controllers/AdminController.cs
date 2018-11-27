@@ -42,9 +42,147 @@ namespace Tech_Forum.Controllers
             return View();
         }
 
-        public ActionResult GenerateCategoryReport()
+        public ActionResult GenerateCategoryReport(string domlist, TestUser u, String show, string showtech, string technolist)
         {
-            return View();
+            if (show != null)
+            {
+                DbAccessEntity tec = new DbAccessEntity();
+                var domainlist = (from p in tec.Post_Table
+                                  where p.domain == domlist
+                                  select new
+                                  {
+                                      domain = p.domain,
+                                      Title = p.title,
+
+                                      UserID = p.userid
+
+                                  }).ToList();
+                Session["domainlist"] = domlist;
+                u.domainsession = Session["domainlist"].ToString();
+                List<QuestionBank> li = new List<QuestionBank>();
+                int i = 0;
+                foreach (var p in domainlist)
+                {
+
+                    u.Domainlist[i] = p.domain;
+                    u.Title[i] = p.Title;
+                    u.UserId[i] = p.UserID;
+                    i++;
+                }
+                u.count = i;
+                var techlist = (from p in tec.Technology_Table
+                                join q in tec.Domain_Table
+                                on p.did equals q.did
+                                where q.domain == domlist
+                                select new
+                                {
+                                    Technology = p.technology
+                                }).ToList();
+                i = 0;
+                foreach (var p in techlist)
+                {
+                    u.Technologydroplist[i] = p.Technology;
+                    i++;
+                }
+                u.techcount = i;
+
+
+                i = 0;
+
+                var domainvar = (from p in tec.Domain_Table
+                                 select p.domain);
+                var count = (from p in tec.Domain_Table
+                             select p.domain).Count();
+                u.Domaincount = count;
+                foreach (var p in domainvar)
+                {
+                    u.Domaindroplist[i] = p;
+                    i++;
+                }
+                return View("GenerateCategoryReport", u);
+
+
+            }
+            else if (showtech != null)
+            {
+                DbAccessEntity tec = new DbAccessEntity();
+                u.techsession = technolist;
+                var techlist = (from p in tec.Technology_Table
+                                join q in tec.Post_Table
+                                on p.technology equals q.technology
+                                where p.technology == technolist
+                                select new
+                                {
+                                    technology = p.technology,
+                                    UserID = q.userid,
+                                    Title = q.title,
+
+
+                                }).ToList();
+
+                List<QuestionBank> li = new List<QuestionBank>();
+                int i = 0;
+                foreach (var p in techlist)
+                {
+
+                    u.Technologylist[i] = p.technology;
+                    u.UserId[i] = p.UserID;
+                    u.Title[i] = p.Title;
+
+                    i++;
+                }
+                u.count = i;
+
+                i = 0;
+
+                var domainvar = (from p in tec.Domain_Table
+                                 select p.domain);
+                var count = (from p in tec.Domain_Table
+                             select p.domain).Count();
+                u.Domaincount = count;
+                foreach (var p in domainvar)
+                {
+                    u.Domaindroplist[i] = p;
+                    i++;
+                }
+                u.domainsession = Session["domainlist"].ToString();
+                var techdropdownlist = (from p in tec.Domain_Table
+                                        join q in tec.Technology_Table
+                                        on p.did equals q.did
+                                        where p.domain == u.domainsession
+                                        select new
+                                        {
+                                            Technology = q.technology
+                                        }).ToList();
+                i = 0;
+                foreach (var p in techdropdownlist)
+                {
+                    u.Technologydroplist[i] = p.Technology;
+                    i++;
+                }
+                u.techcount = i;
+
+                return View("GenerateCategoryReport", u);
+
+            }
+            else
+            {
+
+                int i = 0;
+                DbAccessEntity tz = new DbAccessEntity();
+                var domainvar = (from p in tz.Domain_Table
+                                 select p.domain);
+                var count = (from p in tz.Domain_Table
+                             select p.domain).Count();
+                u.Domaincount = count;
+                foreach (var p in domainvar)
+                {
+                    u.Domaindroplist[i] = p;
+                    i++;
+                }
+                ViewBag.domainlistname = u.Domainlist;
+                return View(u);
+            }
         }
 
 

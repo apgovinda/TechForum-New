@@ -39,16 +39,16 @@
                         {
                             if (q.CorrectAnswer.Equals(q.selectoptions))
                             {
-                                <span style="color:green" class="glyphicon glyphicon-ok-sign gi-5x" ></span>
+                                <span style="color:green" class="glyphicon glyphicon-ok-sign gi-5x"></span>
                             }
                             else
                             {
-                                <span  style="color:red" class="glyphicon glyphicon-remove-sign gi-5x"></span>
+                                <span style="color:red" class="glyphicon glyphicon-remove-sign gi-5x"></span>
                             }
                             <h4>@q.qno.@q.Question</h4>
 
                             <br />
-                      
+
                             if (q.selectoptions.Equals(q.Options[0]))
                             {
                                 if (q.CorrectAnswer.Equals(q.Options[0]))
@@ -146,9 +146,13 @@
 
                         }
                     </fieldset>
+                    <br />
+                    <br />
+
+
                 </div>
             }
-
+            <input type="submit" name="testexit" value="Finish Review" />
         }
     </div>
     <!--submit the test before or aftertimeout-->

@@ -31,39 +31,19 @@ namespace Tech_Forum.Controllers
         public ActionResult TakeTest(Test_Table test, string searchtest, string submittechnology, string technology, string submitdomain, QuestionBank qu, string domain, string checkscore, string _1, string _2, string _3, string _4, string _5, string _6, string _7, string _8, string _9, string _10)
         {
             /*provides dropdown to select domain*/
-            if (searchtest != null)
-            {
-                DbAccessEntity db = new DbAccessEntity();
-                var domainlist = (from p in db.Domain_Table
-                                  select new
-                                  {
-                                      domain = p.domain     //select domain from domain table
-
-                                  }).ToList();
-
-                List<QuestionBank> li = new List<QuestionBank>();
-                foreach (var p in domainlist)
-                {
-                    QuestionBank q = new QuestionBank();
-                    q.domainlist = p.domain;
-                    li.Add(q);
-
-                }
-
-                return View(li);                        //return the list of domain to the view
-
-            }
+          
             /*Lists the technologies after selecting the respective domain*/
-            else if (submitdomain != null)
+            if (domain != null && submittechnology==null)
             {
-                DbAccessEntity db = new DbAccessEntity();
+               DbAccessEntity tec = new DbAccessEntity();
+
 
 
                 //fetch technology id
-                var techlist = (from p in db.Technology_Table
-                                join q in db.Domain_Table
+                var techlist = (from p in tec.Technology_Table
+                                join q in tec.Domain_Table
                                 on p.did equals q.did
-                                where q.domain == domain
+                                where q.domain == domain 
                                 select new
                                 {
                                     Technology = p.technology,
@@ -72,14 +52,16 @@ namespace Tech_Forum.Controllers
                                 }).ToList();
 
                 Session["Domain"] = domain;
-                var domainlist = (from p in db.Domain_Table
+                var domainlist = (from p in tec.Domain_Table
+                                  where p.domain != domain
                                   select new
                                   {
-                                      domain = p.domain          //gets the domain list
+                                      domain = p.domain         //gets the domain list
 
                                   }).ToList();
 
                 List<QuestionBank> li = new List<QuestionBank>();
+
                 foreach (var p in techlist)
                 {
                     QuestionBank q = new QuestionBank();
@@ -87,7 +69,10 @@ namespace Tech_Forum.Controllers
                     li.Add(q);
 
                 }
+                qu.domainlist = domain;
 
+
+                li.Add(qu);
                 foreach (var p in domainlist)
                 {
                     QuestionBank q = new QuestionBank();
@@ -97,7 +82,7 @@ namespace Tech_Forum.Controllers
                 }
 
 
-                return View(li);                                  //returns the list of domain and technology
+                return View(li);                                   //returns the list of domain and technology
 
             }
             /*submitting the technology and domain and starting the test*/
@@ -260,7 +245,56 @@ namespace Tech_Forum.Controllers
             }
             else
             {
-                return View("TakeTest");
+                DbAccessEntity tec = new DbAccessEntity();
+                int i = 0;
+                var domainlist = (from p in tec.Domain_Table
+
+                                  select new
+                                  {
+                                      domain = p.domain     //select domain from domain table
+
+                                  }).ToList();
+
+
+                List<QuestionBank> li = new List<QuestionBank>();
+                foreach (var p in domainlist)
+                {
+                    QuestionBank q = new QuestionBank();
+                    if (i == 0)
+                    {
+                        q.domainlist = p.domain;
+                        Session["domaintrack"] = p.domain;
+                        li.Add(q);
+                    }
+                    else
+                    {
+                        q.domainlist = p.domain;
+                        li.Add(q);
+
+                    }
+                    i++;
+                }
+                string firstdomain = Session["domaintrack"].ToString();
+                var techlist = (from p in tec.Technology_Table
+                                join q in tec.Domain_Table
+                                on p.did equals q.did
+                                where q.domain == firstdomain
+                                select new
+                                {
+                                    Technology = p.technology,
+
+
+                                }).ToList();
+                foreach (var q in techlist)
+                {
+                    QuestionBank que = new QuestionBank();
+                    que.techlist = q.Technology;
+                    li.Add(que);
+
+                }
+
+
+                return View(li);
             }
         }
 
@@ -283,7 +317,7 @@ namespace Tech_Forum.Controllers
         }
 
         [Authorize]
-        public ActionResult ReviewTest(string review)
+        public ActionResult ReviewTest(string review,string testexit)
         {
             if (review != null)
             {
@@ -306,6 +340,10 @@ namespace Tech_Forum.Controllers
                 }
                 return View(list);
 
+            }
+            else if(testexit!=null)
+            {
+                return View("TakeTest");
             }
             else
             {
