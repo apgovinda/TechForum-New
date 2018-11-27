@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech_Forum", "Tech_Forum\Tech_Forum.csproj", "{3BF799B6-3411-42B3-9688-B56066857C96}"
-	ProjectSection(ProjectDependencies) = postProject
-		{28D04993-477E-44C0-8DF8-2AA22B18C443} = {28D04993-477E-44C0-8DF8-2AA22B18C443}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbAccessService", "DbAccessService\DbAccessService.csproj", "{28D04993-477E-44C0-8DF8-2AA22B18C443}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{6D937598-54DA-41B7-B2CA-6CA488B790C3}"
 EndProject
@@ -22,10 +17,6 @@ Global
 		{3BF799B6-3411-42B3-9688-B56066857C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BF799B6-3411-42B3-9688-B56066857C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BF799B6-3411-42B3-9688-B56066857C96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28D04993-477E-44C0-8DF8-2AA22B18C443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28D04993-477E-44C0-8DF8-2AA22B18C443}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28D04993-477E-44C0-8DF8-2AA22B18C443}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28D04993-477E-44C0-8DF8-2AA22B18C443}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D937598-54DA-41B7-B2CA-6CA488B790C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D937598-54DA-41B7-B2CA-6CA488B790C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D937598-54DA-41B7-B2CA-6CA488B790C3}.Release|Any CPU.ActiveCfg = Release|Any CPU

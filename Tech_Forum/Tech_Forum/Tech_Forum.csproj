@@ -299,12 +299,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DbAccessServiceReference\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DbAccessService\DbAccessService.csproj">
-      <Project>{28d04993-477e-44c0-8df8-2aa22b18c443}</Project>
-      <Name>DbAccessService</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
