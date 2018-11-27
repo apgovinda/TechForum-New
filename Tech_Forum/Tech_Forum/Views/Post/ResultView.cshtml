@@ -16,8 +16,12 @@
     {
         averageRating = (double)ViewData["AverageRating"];
     }
+    var postid = 1;
+    if (article != null)
+    {
+        postid = article.postid;
+    }
 
-    var postid = article.postid;
 }
 
 <style>
@@ -219,7 +223,6 @@
             </div>
             <div class="col-md-4">
             </div>
-
             @{
                 if (rate == null || rate.userId == null)
                 {
@@ -281,6 +284,11 @@
         </div>
         <br />
         <p style="text-align:justify">@article.content_</p>
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="font-weight:bold">Tags : @article.tags</h3>
+            </div>
+        </div>
     </div>
 
     <h2>Comments: </h2>
@@ -378,6 +386,11 @@
         </div>
         <br />
         <p style="text-align:justify">@blog.content_</p>
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="font-weight:bold">Tags : @article.tags</h3>
+            </div>
+        </div>
     </div>
 
     <h2>Comments: </h2>

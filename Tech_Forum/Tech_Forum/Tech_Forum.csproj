@@ -270,6 +270,13 @@
     <Content Include="Properties\DataSources\DomainTech.Technology_Table.datasource" />
     <Content Include="Properties\DataSources\DbAccess.Domain_Table.datasource" />
     <Content Include="Properties\DataSources\DbAccess.Technology_Table.datasource" />
+    <EntityDeploy Include="DbAccessModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbAccessModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DbAccessModel.edmx.diagram">
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference\DbAccessService.wsdl" />
     <None Include="Connected Services\ServiceReference\DbAccessService.xsd">
       <SubType>Designer</SubType>
@@ -285,13 +292,6 @@
     </Content>
     <Content Include="Connected Services\ServiceReference\Tech_Forum.ServiceReference.Technology_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <EntityDeploy Include="DbAccessModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbAccessModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DbAccessModel.edmx.diagram">
-      <DependentUpon>DbAccessModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\tech-forum - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\tech-forum - Web Deploy.pubxml" />

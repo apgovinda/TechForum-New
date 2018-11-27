@@ -238,11 +238,14 @@ namespace Tech_Forum.Controllers
         {
 
             using (DbAccessEntity db = new DbAccessEntity())
-            {
-                
+            {   
                 List<Domain_Table> DomainList = db.Domain_Table.ToList();
                 ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
-                var post = db.Post_Table.Where(x => x.postid == id).FirstOrDefault();
+
+                List<Technology_Table> TechnologyList = db.Technology_Table.ToList();
+                ViewBag.TechnologyList = new SelectList(TechnologyList, "tid", "technology");
+
+                Post_Table post = db.Post_Table.Where(x => x.postid == id).FirstOrDefault();
                 return View(post);
             }
         }
@@ -253,13 +256,19 @@ namespace Tech_Forum.Controllers
         public ActionResult EditPost(int id, Post_Table post)
         {
             StreamWriter stream = null;
-            DbAccessServiceClient dbs = new DbAccessServiceClient();
-            List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
-            ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
+            
             try
             {
                 using (DbAccessEntity db = new DbAccessEntity())
                 {
+                    List<Domain_Table> DomainList = db.Domain_Table.ToList();
+                    ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
+
+                    db.Configuration.ProxyCreationEnabled = false;
+
+                    List<Technology_Table> TechnologyList = db.Technology_Table.ToList();
+                    ViewBag.TechnologyList = new SelectList(TechnologyList, "tid", "technology");
+
                     //Get all the values of article/blog
                     var postvalues = db.Post_Table.Where(x => x.postid == id).FirstOrDefault();
 
