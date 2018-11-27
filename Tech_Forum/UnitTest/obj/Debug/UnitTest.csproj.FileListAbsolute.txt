@@ -14,12 +14,12 @@ C:\Users\7000017512\Downloads\TechForum-New-master\Tech_Forum\UnitTest\obj\Debug
 C:\Users\7000017512\Downloads\TechForum-New-master\Tech_Forum\UnitTest\obj\Debug\UnitTest.pdb
 D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\UnitTest.dll
 D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\UnitTest.pdb
-D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 D:\git\TechForum\Tech_Forum\UnitTest\obj\Debug\UnitTest.csprojAssemblyReference.cache
 D:\git\TechForum\Tech_Forum\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
 D:\git\TechForum\Tech_Forum\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
 D:\git\TechForum\Tech_Forum\UnitTest\obj\Debug\UnitTest.dll
 D:\git\TechForum\Tech_Forum\UnitTest\obj\Debug\UnitTest.pdb
+D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\git\TechForum\Tech_Forum\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
