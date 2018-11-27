@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tech_Forum.Models;
-using DbAccess;
+using Tech_Forum.ServiceReference;
 
 namespace Tech_Forum.Controllers
 {

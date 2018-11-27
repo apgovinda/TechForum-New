@@ -11,8 +11,8 @@ using System.IO;
 using System.Web.Security;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
-using DbAccess;
 using Newtonsoft.Json;
+using Tech_Forum.ServiceReference;
 
 namespace Tech_Forum.Controllers
 {
@@ -253,8 +253,8 @@ namespace Tech_Forum.Controllers
         public ActionResult EditPost(int id, Post_Table post)
         {
             StreamWriter stream = null;
-            DbAccessService dbs = new DbAccessService();
-            List<Domain_Table> DomainList = dbs.GetDomainList();
+            DbAccessServiceClient dbs = new DbAccessServiceClient();
+            List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
             ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
             try
             {

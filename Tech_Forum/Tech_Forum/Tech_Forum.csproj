@@ -153,10 +153,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Connected Services\DbAccessServiceReference\Reference.cs">
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -166,7 +169,28 @@
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\SubscriberController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Count_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Crypto.cs" />
+    <Compile Include="DbAccessModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbAccessModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbAccessModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +198,8 @@
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\Extended\Post_Table.cs" />
+    <Compile Include="Models\Extended\Subscriber.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostParentModel.cs" />
     <Compile Include="Models\QuestionBank.cs" />
@@ -181,13 +207,31 @@
     <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Models\SubscriberLogin.cs" />
     <Compile Include="Models\TestUser.cs" />
+    <Compile Include="Post_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question_Bank_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Technology_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test_Table.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DbAccessServiceReference\DbAccessService.disco" />
-    <None Include="Connected Services\DbAccessServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\DbAccessServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\DbAccessServiceReference\Reference.svcmap">
+    <None Include="Connected Services\ServiceReference\DbAccessService.disco" />
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -196,6 +240,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\navbar.css" />
+    <Content Include="DbAccessModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+      <LastGenOutput>DbAccessModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbAccessModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+      <LastGenOutput>DbAccessModel.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -214,18 +268,33 @@
     </Content>
     <Content Include="Properties\DataSources\DomainTech.Domain_Table.datasource" />
     <Content Include="Properties\DataSources\DomainTech.Technology_Table.datasource" />
-    <None Include="Connected Services\DbAccessServiceReference\DbAccessService.wsdl" />
-    <None Include="Connected Services\DbAccessServiceReference\DbAccessService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\DbAccessServiceReference\DbAccessService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\DbAccessServiceReference\DbAccessService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Properties\DataSources\DbAccess.Domain_Table.datasource" />
     <Content Include="Properties\DataSources\DbAccess.Technology_Table.datasource" />
+    <None Include="Connected Services\ServiceReference\DbAccessService.wsdl" />
+    <None Include="Connected Services\ServiceReference\DbAccessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\DbAccessService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\DbAccessService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServiceReference\Tech_Forum.ServiceReference.Domain_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\Tech_Forum.ServiceReference.Technology_Table.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <EntityDeploy Include="DbAccessModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbAccessModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DbAccessModel.edmx.diagram">
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\tech-forum - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tech-forum - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -297,7 +366,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\DbAccessServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

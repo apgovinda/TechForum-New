@@ -96,6 +96,8 @@ C:\Users\ManageLocal\source\repos\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.pdb
 C:\Users\ManageLocal\source\repos\Tech_Forum\Tech_Forum\bin\DbAccessService.dll
 C:\Users\ManageLocal\source\repos\Tech_Forum\Tech_Forum\bin\DbAccessService.pdb
 C:\Users\ManageLocal\source\repos\Tech_Forum\Tech_Forum\bin\DbAccessService.dll.config
+D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CoreCompileInputs.cache
+D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csprojAssemblyReference.cache
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\ApplicationInsights.config
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Tech_Forum.dll.config
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Tech_Forum.dll
@@ -147,7 +149,6 @@ D:\git\TechForum\Tech_Forum\Tech_Forum\bin\roslyn\vbc.rsp
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\roslyn\VBCSCompiler.exe
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\roslyn\VBCSCompiler.exe.config
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Antlr3.Runtime.dll
-D:\git\TechForum\Tech_Forum\Tech_Forum\bin\DbAccessService.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\EntityFramework.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\EntityFramework.SqlServer.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.Agent.Intercept.dll
@@ -170,8 +171,6 @@ D:\git\TechForum\Tech_Forum\Tech_Forum\bin\System.Web.WebPages.Deployment.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\System.Web.WebPages.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\System.Web.WebPages.Razor.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\WebGrease.dll
-D:\git\TechForum\Tech_Forum\Tech_Forum\bin\DbAccessService.pdb
-D:\git\TechForum\Tech_Forum\Tech_Forum\bin\DbAccessService.dll.config
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\EntityFramework.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\EntityFramework.SqlServer.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\System.Web.Helpers.xml
@@ -189,8 +188,6 @@ D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.DependencyCollector.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.WindowsServer.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.Web.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csprojAssemblyReference.cache
-D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CoreCompileInputs.cache
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CopyComplete
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.pdb

@@ -26,12 +26,13 @@ namespace DbAccess
         }
     
         public virtual DbSet<Admin_Table> Admin_Table { get; set; }
+        public virtual DbSet<Count_Table> Count_Table { get; set; }
         public virtual DbSet<Domain_Table> Domain_Table { get; set; }
         public virtual DbSet<Post_Table> Post_Table { get; set; }
         public virtual DbSet<Question_Bank_Table> Question_Bank_Table { get; set; }
         public virtual DbSet<Subscriber_Table> Subscriber_Table { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Technology_Table> Technology_Table { get; set; }
         public virtual DbSet<Test_Table> Test_Table { get; set; }
-        public virtual DbSet<Count_Table> Count_Table { get; set; }
     }
 }

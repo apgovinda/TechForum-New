@@ -15,8 +15,8 @@ namespace DbAccess
     public partial class Question_Bank_Table
     {
         public int QuestionID { get; set; }
-        public string Options { get; set; }
         public string Question { get; set; }
+        public string Options { get; set; }
         public string CorrectAnswer { get; set; }
         public int DomainId { get; set; }
         public int TechnologyId { get; set; }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="072b8ebb-09d9-4fd0-ae4e-4af2128e5b2c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dbappservice.azurewebsites.net/DbAccessService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DbAccessService.xsd" MetadataType="Schema" ID="a5f2fdf3-8406-4ac9-bdd7-f08d4485a235" SourceId="1" SourceUrl="http://dbappservice.azurewebsites.net/DbAccessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DbAccessService1.xsd" MetadataType="Schema" ID="25c5512b-4676-48c9-a228-0d4679966c1e" SourceId="1" SourceUrl="http://dbappservice.azurewebsites.net/DbAccessService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DbAccessService.wsdl" MetadataType="Wsdl" ID="1b4a1c10-e111-4cd5-b0db-41a79ad448da" SourceId="1" SourceUrl="http://dbappservice.azurewebsites.net/DbAccessService.svc?wsdl" />
+    <MetadataFile FileName="DbAccessService.disco" MetadataType="Disco" ID="351dc1a9-965b-48f7-8dbd-45f862474703" SourceId="1" SourceUrl="http://dbappservice.azurewebsites.net/DbAccessService.svc?disco" />
+    <MetadataFile FileName="DbAccessService2.xsd" MetadataType="Schema" ID="33bb0fbe-9543-456e-bd61-164e18e449de" SourceId="1" SourceUrl="http://dbappservice.azurewebsites.net/DbAccessService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

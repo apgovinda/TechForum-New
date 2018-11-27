@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tech_Forum.Models;
-using DbAccess;
+using Tech_Forum.ServiceReference;
 
 namespace Tech_Forum.Controllers
 {
@@ -28,8 +28,8 @@ namespace Tech_Forum.Controllers
         public ActionResult BrowseBlog()
         {
 
-            DbAccessService dbs = new DbAccessService();
-            List<Domain_Table> DomainList = dbs.GetDomainList();
+            DbAccessServiceClient dbs = new DbAccessServiceClient();
+            List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
             ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
             return View();
         }
@@ -41,13 +41,13 @@ namespace Tech_Forum.Controllers
         {
             using (DbAccessEntity db = new DbAccessEntity())
             {
-                DbAccessService dbs = new DbAccessService();
-                List<Domain_Table> DomainList = dbs.GetDomainList();
+                DbAccessServiceClient dbs = new DbAccessServiceClient();
+                List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
                 ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
 
                 db.Configuration.ProxyCreationEnabled = false;
 
-                List<Technology_Table> TechnologyList = dbs.GetTechforDomain(post.domain);
+                List<ServiceReference.Technology_Table> TechnologyList = dbs.GetTechforDomain(post.domain).ToList();
                 ViewBag.TechnologyList = new SelectList(TechnologyList, "tid", "technology");
 
                 int did = Convert.ToInt32(post.domain);
@@ -79,8 +79,8 @@ namespace Tech_Forum.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            DbAccessService dbs = new DbAccessService();
-            List<Domain_Table> DomainList = dbs.GetDomainList();
+            DbAccessServiceClient dbs = new DbAccessServiceClient();
+            List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
             ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
             return View();
 
@@ -108,13 +108,13 @@ namespace Tech_Forum.Controllers
             {
                 using (DbAccessEntity db = new DbAccessEntity())
                 {
-                    DbAccessService dbs = new DbAccessService();
-                    List<Domain_Table> DomainList = dbs.GetDomainList();
+                    DbAccessServiceClient dbs = new DbAccessServiceClient();
+                    List<ServiceReference.Domain_Table> DomainList = dbs.GetDomainList().ToList();
                     ViewBag.DomainList = new SelectList(DomainList, "did", "domain");
 
                     db.Configuration.ProxyCreationEnabled = false;
 
-                    List<Technology_Table> TechnologyList = dbs.GetTechforDomain(post.domain);
+                    List<ServiceReference.Technology_Table> TechnologyList = dbs.GetTechforDomain(post.domain).ToList();
                     ViewBag.TechnologyList = new SelectList(TechnologyList, "tid", "technology");
 
                     //Get the Domain ID
