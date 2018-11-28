@@ -293,8 +293,8 @@
     <Content Include="Connected Services\ServiceReference\Tech_Forum.ServiceReference.Technology_Table.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\tech-forum - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\tech-forum - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\tech-forumFTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tech-forumWebDeploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
