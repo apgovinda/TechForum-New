@@ -1,5 +1,4 @@
 ﻿@model Tech_Forum.Post_Table
-
 @{
     ViewBag.Title = "DeletePost";
 }
@@ -68,12 +67,13 @@
         </dd>
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        @Html.ActionLink("Back to List", "ManageUser") |
-        <input type="submit" value="Delete" class="btn btn-default" />
-    </div>
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to List", "ManageUser") |
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
     }
 </div>

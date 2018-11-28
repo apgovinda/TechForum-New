@@ -16,12 +16,12 @@
     {
         averageRating = (double)ViewData["AverageRating"];
     }
+
     var postid = 1;
     if (article != null)
     {
         postid = article.postid;
     }
-
 }
 
 <style>
@@ -100,10 +100,21 @@
     }
 
     .commentDiv {
-        width: 200px;
-        border-bottom: white;
-        border-bottom-style: solid;
         margin-left: 0px;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        width: -moz-fit-content;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-bottom: 16px;
+    }
+
+    .commentContent {
+        background: lightgray;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     .commentTextBox {
@@ -111,8 +122,7 @@
     }
 
     .commentButton {
-        margin-top: 10px;
-        height: 30px;
+        margin-top: 16px;
     }
 
     .postCommentDiv {
@@ -129,6 +139,10 @@
     a:not([href]):not([tabindex]) {
         color: inherit;
         text-decoration: underline;
+    }
+
+    .replyCommentLink {
+        cursor: pointer;
     }
 </style>
 
@@ -149,11 +163,13 @@
 
         var subCommentTextBox = document.createElement("textarea");
         subCommentTextBox.id = "subCommentText";
-        subCommentTextBox.style.marginLeft = margin;
+        //subCommentTextBox.style.marginLeft = margin;
+        subCommentTextBox.style.marginBottom = "8px";
+        subCommentTextBox.style.resize = "none";
         subCommentTextBox.className = "form-control";
 
         var subCommentPostButton = document.createElement("button");
-        subCommentPostButton.style.marginLeft = margin;
+        //subCommentPostButton.style.marginLeft = margin;
         subCommentPostButton.className = "btn btn-info";
 
         var subCommentTextBoxId = subCommentTextBox.id;
@@ -190,14 +206,14 @@
     string marginString = margin.ToString() + "px";
     <div id="@comment.postid" class="container commentDiv" style="margin-left: @marginString">
         <div class="row">
-            <p class="col-sm-12" style="margin-left: @marginString;"><strong>@subscriber.name</strong></p>
+            <p class="col-sm-12"><strong>@subscriber.name</strong></p>
         </div>
         <div class="row">
-            <p style="margin-left: @marginString; background: lightgray">@comment.content_</p>
+            <p style="background: lightgray" class="commentContent">@comment.content_</p>
         </div>
         <div class="row">
             @{String buttonId = comment.postid.ToString() + "b";}
-            <a id="@buttonId" class="replyCommentLink col-sm-3" onclick="postComment(this.id, '@marginString');" style="margin-left: @marginString;">Reply</a>
+            <a id="@buttonId" class="replyCommentLink col-sm-3" onclick="postComment(this.id, '@marginString');" style="color:#007bff;">Reply</a>
         </div>
     </div>
 
@@ -212,8 +228,8 @@
 @if (article != null)
 {
     <br />
-    <div class="jumbotron text-center">
-        <h3>@article.title</h3>
+    <div class="jumbotron text-center" style="background-color: #5cb85c;border-color: #4cae4c;">
+        <h2><strong>@article.title</strong></h2>
     </div>
     <br />
     <div class="container">
@@ -223,12 +239,12 @@
             </div>
             <div class="col-md-4">
             </div>
+
             @{
                 if (rate == null || rate.userId == null)
                 {
                     <div class="col-md-4">
                         <div class="rate">
-                            <p id="ratingHeader">Rate the Article</p>
                             <input type="radio" id="star5" name="rate" value="5" onclick="postArticleRating(this.id, @article.postid);" />
                             <label for="star5" title="text">5 stars</label>
                             <input type="radio" id="star4" name="rate" value="4" onclick="postArticleRating(this.id, @article.postid);" />
@@ -247,7 +263,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                <p>Average rating is @averageRating</p>
+                                <p style="margin-left:140px;">Average rating: @averageRating</p>
                             </div>
                         </div>
                     }
@@ -256,9 +272,6 @@
                 else
                 {
                     <div class="col-md-3">
-                        <div class="row">
-                            <p class="mx-auto">You have rated</p>
-                        </div>
                         <div class="row">
                             <div class="rateDisplay mx-auto">
                                 @for (int i = rate.rating; i < 5; i++)
@@ -271,7 +284,7 @@
                                 }
                             </div>
                         </div>
-                        <p>Average rating is @averageRating</p>
+                        <p style="margin-left: 140px;">Average rating: @averageRating</p>
                     </div>
                 }
             }
@@ -291,7 +304,7 @@
         </div>
     </div>
 
-    <h2>Comments: </h2>
+    <h3>Comments: </h3>
     if (comments != null)
     {
         int margin = 0;
@@ -306,11 +319,11 @@
                     <p style="margin-left: @marginString;"><strong>@subscriber.name</strong></p>
                 </div>
                 <div class="row">
-                    <p style="margin-left: @marginString; background: lightgray">@Html.DisplayFor(model => item.content_)</p>
+                    <p style="margin-left: @marginString; background: lightgray" class="commentContent">@Html.DisplayFor(model => item.content_)</p>
                 </div>
                 <div class="row col-sm-3">
                     @{String buttonId = item.postid.ToString() + "b";}
-                    <a id="@buttonId" class="replyCommentLink" onclick="postComment(this.id);" style="margin-left: @marginString;">Reply</a>
+                    <a id="@buttonId" class="replyCommentLink" onclick="postComment(this.id);" style="margin-left: @marginString;color: #007bff">Reply</a>
                 </div>
             </div>
 
@@ -325,7 +338,7 @@
     {
         <div class="postCommentDiv row">
             @Html.TextAreaFor(model => model.comment.content_, new { @class = "form-control commentTextBox col-sm-8", id = "mainCommentTextBox", onkeypress = "enableMainCommentButton(this.value)", required = true, oninvalid = "this.setCustomValidity('Put something atleast')", oninput = "this.setCustomValidity('')" })
-            <button type="submit" id="mainCommentButton" class="btn btn-outline-secondary commentButton col-sm-4" >Comment</button>
+            <button type="submit" id="mainCommentButton" class="btn btn-success commentButton col-sm-4">Comment</button>
         </div>
     }
 
@@ -334,8 +347,8 @@
 @if (blog != null)
 {
     <br />
-    <div class="jumbotron text-center">
-        <h3>@blog.title</h3>
+    <div class="jumbotron text-center" style="background-color: #5cb85c;border-color: #4cae4c;">
+        <h2><strong>@blog.title</strong></h2>
     </div>
     <br />
     <div class="container">
@@ -349,7 +362,6 @@
                 {
                     <div class="col-md-4">
                         <div class="rate">
-                            <p id="ratingHeader">Rate the Article</p>
                             <input type="radio" id="star5" name="rate" value="5" onclick="postArticleRating(this.id, @blog.postid);" />
                             <input type="radio" id="star4" name="rate" value="4" onclick="postArticleRating(this.id, @blog.postid);" />
                             <input type="radio" id="star3" name="rate" value="3" onclick="postArticleRating(this.id, @blog.postid);" />
@@ -363,7 +375,7 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
-                                <p>Average rating is @averageRating</p>
+                                <p style="margin-left:140px;">Average rating: @averageRating</p>
                             </div>
                         </div>
                     }
@@ -372,8 +384,7 @@
                 else
                 {
                     <div class="col-md-4">
-                        <p>You have rated @rate.rating stars</p>
-                        <p>Average rating is @averageRating</p>
+                        <p style="margin-left:140px;">Average rating: @averageRating</p>
                     </div>
                 }
             }
@@ -408,11 +419,11 @@
                     <p style="margin-left: @marginString;"><strong>@subscriber.name</strong></p>
                 </div>
                 <div class="row">
-                    <p style="margin-left: @marginString; background: lightgray">@Html.DisplayFor(model => item.content_)</p>
+                    <p style="margin-left: @marginString; background: lightgray" class="commentContent">@Html.DisplayFor(model => item.content_)</p>
                 </div>
                 <div class="row col-sm-3">
                     @{String buttonId = item.postid.ToString() + "b";}
-                    <a id="@buttonId" class="replyCommentLink" onclick="postComment(this.id);" style="margin-left: @marginString;">Reply</a>
+                    <a id="@buttonId" class="replyCommentLink" onclick="postComment(this.id);" style="margin-left: @marginString;color: #007bff;">Reply</a>
                 </div>
             </div>
 

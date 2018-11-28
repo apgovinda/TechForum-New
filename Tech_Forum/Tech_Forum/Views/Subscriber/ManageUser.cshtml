@@ -4,8 +4,8 @@
     var Blogs = (IEnumerable<Post_Table>)ViewData["Blogs"];
 }
 <br />
-<div class="jumbotron text-center">
-    <h3>Your Articles and Blogs</h3>
+<div class="jumbotron text-center" style="background-color: #5cb85c;border-color: #4cae4c;">
+    <h2><strong>Your Articles and Blogs</strong></h2>
 </div>
 
 <br />
@@ -30,21 +30,21 @@
 
         @foreach (var item in Articles)
         {
-        <tr>
-            <td>
-                @Html.ActionLink(item.title, "Details", new { id = item.postid })
-            </td>
-            <td>
-                @Html.DisplayName(item.domain)
-            </td>
-            <td>
-                <p>@item.technology</p>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditPost", new { id = item.postid }) |
-                @Html.ActionLink("Delete", "DeletePost", new { id = item.postid })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink(item.title, "Details", new { id = item.postid })
+                </td>
+                <td>
+                    @Html.DisplayName(item.domain)
+                </td>
+                <td>
+                    <p>@item.technology</p>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPost", new { id = item.postid }) |
+                    @Html.ActionLink("Delete", "DeletePost", new { id = item.postid })
+                </td>
+            </tr>
         }
 
     </table>
@@ -78,21 +78,21 @@
 
         @foreach (var item in Blogs)
         {
-        <tr>
-            <td>
-                @Html.ActionLink(item.title, "Details", new { id = item.postid })
-            </td>
-            <td>
-                @Html.DisplayName(item.domain)
-            </td>
-            <td>
-                <p>@item.technology</p>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditPost", new { id = item.postid }) |
-                @Html.ActionLink("Delete", "DeletePost", new { id = item.postid })
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink(item.title, "Details", new { id = item.postid })
+                </td>
+                <td>
+                    @Html.DisplayName(item.domain)
+                </td>
+                <td>
+                    <p>@item.technology</p>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPost", new { id = item.postid }) |
+                    @Html.ActionLink("Delete", "DeletePost", new { id = item.postid })
+                </td>
+            </tr>
         }
 
     </table>

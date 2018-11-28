@@ -7,16 +7,12 @@
 
 
 <style>
-    body {
-        background-image: url(../../Images/blue.jpg);
-        background-repeat: no-repeat;
-        background-size: 8000px;
-    }
+   
 </style>
 
-<h2 style="text-align:center;color:white;">Test Review</h2>
-<br />
-<br />
+<div class="jumbotron text-center" style="background-color: #5cb85c;border-color: #4cae4c;">
+    <h2><strong>Test Review</strong></h2>
+</div>
 
 
 
@@ -33,7 +29,7 @@
 
             foreach (QuestionBank q in Model)
             {
-                <div id="list" class="jumbotron">
+                <div id="list" class="jumbotron" style="color:black">
                     <fieldset>
                         @if (q.qno > 0)
                         {
@@ -152,7 +148,7 @@
 
                 </div>
             }
-            <input type="submit" name="testexit" value="Finish Review" />
+            <input type="submit" name="testexit" value="Finish Review" class="btn btn-success"/>
         }
     </div>
     <!--submit the test before or aftertimeout-->

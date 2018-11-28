@@ -1,4 +1,5 @@
 ﻿@model Post_Table
+
 @{
     ViewBag.Title = "EditPost";
     if (ViewBag.TechnologyList == null)
@@ -7,6 +8,7 @@
     }
 }
 <h2>Edit the post</h2>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -23,6 +25,7 @@
                 </div>
             }
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.technology, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -30,6 +33,7 @@
                 @Html.ValidationMessageFor(model => model.technology, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -37,6 +41,7 @@
                 @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.tags, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -44,6 +49,7 @@
                 @Html.ValidationMessageFor(model => model.tags, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.content_, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -51,6 +57,7 @@
                 @Html.ValidationMessageFor(model => model.content_, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -58,13 +65,16 @@
         </div>
     </div>
 }
+
 <div>
     @Html.ActionLink("Back to List", "ManageUser")
 </div>
+
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
 <script>
     $(document).ready(function () {
         $("#did").click(function () {

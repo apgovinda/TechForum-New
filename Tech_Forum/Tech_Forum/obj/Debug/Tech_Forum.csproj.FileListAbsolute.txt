@@ -190,3 +190,4 @@ D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CoreCompileIn
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CopyComplete
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.dll
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.pdb
+D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csprojAssemblyReference.cache

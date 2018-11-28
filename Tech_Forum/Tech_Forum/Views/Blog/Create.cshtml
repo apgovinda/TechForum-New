@@ -63,14 +63,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Post.content_, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Post.content_, new { @class = "form-control" })
+                @Html.TextAreaFor(model => model.Post.content_, new { @class = "form-control text-area" })
                 @Html.ValidationMessageFor(model => model.Post.content_, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit Blog" class="btn btn-default" />
+                <input type="submit" value="Submit Blog" class="btn btn-success" />
             </div>
         </div>
     </div>

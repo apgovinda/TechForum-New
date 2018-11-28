@@ -20,7 +20,7 @@ namespace Tech_Forum.Controllers
 
                     if (user != null)
                     {
-                        return View("GenerateOverallReport");
+                        return View("GenerateUserReport");
                     }
                     else
                     {
