@@ -186,7 +186,6 @@ D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.DependencyCollector.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.WindowsServer.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.AI.Web.xml
 D:\git\TechForum\Tech_Forum\Tech_Forum\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csprojAssemblyReference.cache
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CoreCompileInputs.cache
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.csproj.CopyComplete
 D:\git\TechForum\Tech_Forum\Tech_Forum\obj\Debug\Tech_Forum.dll
