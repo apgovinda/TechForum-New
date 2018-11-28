@@ -150,8 +150,8 @@
       <DependentUpon>DbAccessModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\DbAppServiceFTP.pubxml" />
-    <None Include="Properties\PublishProfiles\DbAppServiceWebDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\DbAppService - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\DbAppService - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
